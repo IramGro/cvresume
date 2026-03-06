@@ -1,9 +1,4 @@
-/**
- * CV Premium — script.js
- * Lenis Smooth Scroll + Reveal + Cursor + Nav Dots + Dark Mode
- */
 
-/* ─── 1. Lenis Smooth Scroll ─────────────────────────────── */
 const lenis = new Lenis({
     duration: 1.4,
     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -17,7 +12,7 @@ function lenisRAF(time) {
 }
 requestAnimationFrame(lenisRAF);
 
-/* Hacer que los links ancla usen Lenis */
+
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', (e) => {
         const target = document.querySelector(anchor.getAttribute('href'));
@@ -28,7 +23,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-/* ─── 2. Reveal on Scroll (IntersectionObserver) ─────────── */
+
 const revealEls = document.querySelectorAll('.reveal');
 const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry, i) => {
@@ -44,7 +39,7 @@ const revealObserver = new IntersectionObserver((entries) => {
 
 revealEls.forEach(el => revealObserver.observe(el));
 
-/* ─── 3. Custom Cursor ───────────────────────────────────── */
+
 const cursor = document.getElementById('cursor');
 const cursorFollower = document.getElementById('cursor-follower');
 let mouseX = 0, mouseY = 0;
@@ -58,7 +53,7 @@ if (cursor && cursorFollower) {
         cursor.style.top  = mouseY + 'px';
     });
 
-    // Interpolación suave del follower
+
     (function animFollower() {
         follX += (mouseX - follX) * 0.12;
         follY += (mouseY - follY) * 0.12;
@@ -67,7 +62,7 @@ if (cursor && cursorFollower) {
         requestAnimationFrame(animFollower);
     })();
 
-    // Efecto hover en links y botones
+
     document.querySelectorAll('a, button, .skill, .job, .contact-card').forEach(el => {
         el.addEventListener('mouseenter', () => {
             cursor.style.width  = '16px';
@@ -86,7 +81,7 @@ if (cursor && cursorFollower) {
     });
 }
 
-/* ─── 4. Dark Mode ───────────────────────────────────────── */
+
 document.addEventListener('DOMContentLoaded', () => {
     const body = document.body;
     const toggleBtn = document.getElementById('dark-mode-toggle');
@@ -102,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('dark-mode', enabled ? 'enabled' : 'disabled');
     };
 
-    // Leer preferencia guardada o del sistema
+
     const saved = localStorage.getItem('dark-mode');
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     applyDark(saved === 'enabled' || (saved === null && prefersDark));
@@ -112,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-/* ─── 5. Floating Nav Dots — Active State ────────────────── */
+
 const sections = document.querySelectorAll('main section[id]');
 const navDots  = document.querySelectorAll('.nav-dot');
 
@@ -129,7 +124,7 @@ const sectionObserver = new IntersectionObserver((entries) => {
 
 sections.forEach(s => sectionObserver.observe(s));
 
-/* ─── 6. Skill Tags — Ripple Effect ─────────────────────── */
+
 document.querySelectorAll('.skill').forEach(skill => {
     skill.addEventListener('click', function (e) {
         const ripple = document.createElement('span');
@@ -148,11 +143,12 @@ document.querySelectorAll('.skill').forEach(skill => {
     });
 });
 
-// Keyframe ripple dinámico
+
 const style = document.createElement('style');
 style.textContent = `
     @keyframes rippleAnim {
         to { transform: translate(-50%, -50%) scale(3); opacity: 0; }
     }
 `;
+
 document.head.appendChild(style);
