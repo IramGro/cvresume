@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="iconGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22d3ee" />
+      <stop offset="100%" stop-color="#0891b2" />
+    </linearGradient>
+  </defs>
+  <!-- Hexágono técnico exterior -->
+  <path d="M50 5 L93.3 30 L93.3 70 L50 95 L6.7 70 L6.7 30 Z" fill="none" stroke="url(#iconGrad)" stroke-width="8" stroke-linejoin="round" />
+  <!-- Círculo interior estilo nodo -->
+  <circle cx="50" cy="50" r="32" fill="none" stroke="url(#iconGrad)" stroke-width="2.5" stroke-dasharray="6 4" opacity="0.6" />
+  <!-- Iniciales -->
+  <text x="50" y="54" font-family="system-ui, -apple-system, sans-serif" font-size="34" font-weight="800" fill="url(#iconGrad)" text-anchor="middle" dominant-baseline="middle" letter-spacing="1">CG</text>
+</svg>
