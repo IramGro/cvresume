@@ -1,6 +1,6 @@
 const translations = {
     es: {
-        role_qa_lead: "QA Lead",
+        role_qa_lead: "QA Lead/Dev",
         role_automation: "Automatización",
         role_devops: "DevOps",
         nav_about: "Sobre mí",
@@ -13,13 +13,13 @@ const translations = {
         exp_title: "Experiencia Profesional",
         exp_job1_company: "Grupo TI México",
         exp_job1_role: "QA Lead",
-        exp_job1_date: "202X – Actualidad",
+        exp_job1_date: "2022 – Actualidad",
         exp_job1_desc1: "Gestión de pruebas de regresión y recursos.",
         exp_job1_desc2: "Automatización de pruebas con Selenium y Appium.",
         exp_job1_desc3: "Validación de cambios en código y análisis de bugs.",
         exp_job2_company: "Getic",
         exp_job2_role: "QA Engineer",
-        exp_job2_date: "202X – 202X",
+        exp_job2_date: "2016 – 2022",
         exp_job2_desc1: "Ejecución de pruebas manuales y automatizadas.",
         exp_job2_desc2: "Documentación y análisis de defectos.",
         exp_job2_desc3: "Colaboración en validación de código y mejoras en procesos.",
@@ -42,10 +42,10 @@ const translations = {
         proj3_impact_pill2: "🖥️ Multi-VM",
         skills_title: "Habilidades Técnicas",
         contact_title: "Contacto",
-        footer_text: "© 2025 Iram Coré Guerrero · QA Lead · Hecho con "
+        footer_text: "© 2011 Iram Coré Guerrero · QA Lead · Hecho con "
     },
     en: {
-        role_qa_lead: "QA Lead",
+        role_qa_lead: "QA Lead/Dev",
         role_automation: "Automation",
         role_devops: "DevOps",
         nav_about: "About Me",
@@ -58,13 +58,13 @@ const translations = {
         exp_title: "Professional Experience",
         exp_job1_company: "Grupo TI México",
         exp_job1_role: "QA Lead",
-        exp_job1_date: "202X – Present",
+        exp_job1_date: "2022 – Present",
         exp_job1_desc1: "Management of regression testing and resources.",
         exp_job1_desc2: "Test automation with Selenium and Appium.",
         exp_job1_desc3: "Code change validation and bug analysis.",
         exp_job2_company: "Getic",
         exp_job2_role: "QA Engineer",
-        exp_job2_date: "202X – 202X",
+        exp_job2_date: "2016 – 2022",
         exp_job2_desc1: "Execution of manual and automated testing.",
         exp_job2_desc2: "Documentation and defect analysis.",
         exp_job2_desc3: "Collaboration on code validation and process improvements.",
@@ -87,7 +87,7 @@ const translations = {
         proj3_impact_pill2: "🖥️ Multi-VM",
         skills_title: "Technical Skills",
         contact_title: "Contact",
-        footer_text: "© 2025 Iram Coré Guerrero · QA Lead · Made with "
+        footer_text: "© 2011 Iram Coré Guerrero · QA Lead · Made with "
     }
 };
 
