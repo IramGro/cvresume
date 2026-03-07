@@ -42,7 +42,7 @@ const translations = {
         proj3_impact_pill2: "🖥️ Multi-VM",
         skills_title: "Habilidades Técnicas",
         contact_title: "Contacto",
-        footer_text: "© 2011 Iram Coré Guerrero · QA Lead · Hecho con "
+        footer_text: "© 2011 Iram Coré Guerrero · QA Lead/Dev · Hecho con "
     },
     en: {
         role_qa_lead: "QA Lead/Dev",
@@ -87,7 +87,7 @@ const translations = {
         proj3_impact_pill2: "🖥️ Multi-VM",
         skills_title: "Technical Skills",
         contact_title: "Contact",
-        footer_text: "© 2011 Iram Coré Guerrero · QA Lead · Made with "
+        footer_text: "© 2011 Iram Coré Guerrero · QA Lead/Dev · Made with "
     }
 };
 
