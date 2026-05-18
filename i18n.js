@@ -6,10 +6,11 @@ const translations = {
         nav_about: "Sobre mí",
         nav_experience: "Experiencia",
         nav_projects: "Proyectos",
+        nav_education: "Educación",
         nav_skills: "Habilidades",
         nav_contact: "Contacto",
         about_title: "Sobre mí",
-        about_text: "Ingeniero de pruebas con experiencia en <strong>automatización</strong>, análisis de bugs y gestión de equipos QA. Apasionado por construir software de calidad mediante metodologías ágiles, herramientas modernas y cultura DevOps.",
+        about_text: "Ingeniero de pruebas con +10 años de experiencia en <strong>automatización</strong>, análisis de bugs y liderazgo de equipos QA. Apasionado por construir software de calidad mediante metodologías ágiles, herramientas modernas y cultura DevOps.",
         exp_title: "Experiencia Profesional",
         exp_job1_company: "Grupo TI México",
         exp_job1_role: "QA Lead",
@@ -40,9 +41,22 @@ const translations = {
         proj3_impact_coverage: "cobertura diaria",
         proj3_impact_pill1: "🔄 Ejecución desatendida",
         proj3_impact_pill2: "🖥️ Multi-VM",
+        proj4_title: "CV Portfolio Web",
+        proj4_company: "Proyecto Personal",
+        proj4_badge: "Frontend",
+        proj4_desc: "Portal web interactivo como CV/Portafolio profesional. Incluye dark mode, i18n ES/EN, smooth scroll (Lenis), animaciones CSS avanzadas, glassmorphism y generación automática de CV en DOCX/PDF mediante Python-docx.",
+        edu_title: "Educación & Certificaciones",
+        edu_degree: "Ingeniería en Sistemas Computacionales",
+        edu_school: "Instituto Tecnológico de Estudios Superiores",
+        edu_cert1: "Microsoft Azure DevOps Engineer",
+        edu_cert2: "Selenium WebDriver con Java",
+        edu_cert3: "Python para QA & Automatización",
+        skill_expert: "Experto",
+        skill_advanced: "Avanzado",
+        skill_intermediate: "Intermedio",
         skills_title: "Habilidades Técnicas",
         contact_title: "Contacto",
-        footer_text: "© 2011 Iram Coré Guerrero · QA Lead/Dev · Hecho con "
+        footer_text: "© 2025 Iram Coré Guerrero · QA Lead/Dev · Hecho con "
     },
     en: {
         role_qa_lead: "QA Lead/Dev",
@@ -51,10 +65,11 @@ const translations = {
         nav_about: "About Me",
         nav_experience: "Experience",
         nav_projects: "Projects",
+        nav_education: "Education",
         nav_skills: "Skills",
         nav_contact: "Contact",
         about_title: "About Me",
-        about_text: "Test Engineer experienced in <strong>automation</strong>, bug analysis, and QA team management. Passionate about building quality software through agile methodologies, modern tools, and DevOps culture.",
+        about_text: "Test Engineer with +10 years of experience in <strong>automation</strong>, bug analysis, and QA team leadership. Passionate about building quality software through agile methodologies, modern tools, and DevOps culture.",
         exp_title: "Professional Experience",
         exp_job1_company: "Grupo TI México",
         exp_job1_role: "QA Lead",
@@ -85,9 +100,22 @@ const translations = {
         proj3_impact_coverage: "daily coverage",
         proj3_impact_pill1: "🔄 Unattended execution",
         proj3_impact_pill2: "🖥️ Multi-VM",
+        proj4_title: "CV Portfolio Web",
+        proj4_company: "Personal Project",
+        proj4_badge: "Frontend",
+        proj4_desc: "Interactive web portal as a professional CV/Portfolio. Features dark mode, ES/EN i18n, smooth scroll (Lenis), advanced CSS animations, glassmorphism and automatic DOCX/PDF CV generation via Python-docx.",
+        edu_title: "Education & Certifications",
+        edu_degree: "Computer Systems Engineering",
+        edu_school: "Instituto Tecnológico de Estudios Superiores",
+        edu_cert1: "Microsoft Azure DevOps Engineer",
+        edu_cert2: "Selenium WebDriver with Java",
+        edu_cert3: "Python for QA & Automation",
+        skill_expert: "Expert",
+        skill_advanced: "Advanced",
+        skill_intermediate: "Intermediate",
         skills_title: "Technical Skills",
         contact_title: "Contact",
-        footer_text: "© 2011 Iram Coré Guerrero · QA Lead/Dev · Made with "
+        footer_text: "© 2025 Iram Coré Guerrero · QA Lead/Dev · Made with "
     }
 };
 
@@ -99,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const updateLanguage = (lang) => {
         currentLang = lang;
         localStorage.setItem('language', lang);
-        
+
         if (langText) {
             langText.textContent = lang === 'es' ? 'ES | en' : 'EN | es';
         }

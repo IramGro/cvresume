@@ -612,42 +612,41 @@ p strong {
     box-shadow: 0 4px 18px rgba(8, 145, 178, 0.25);
 }
 
-/* ── Floating Controls (Dark mode & Lang toggle) ── */
-.floating-controls {
-    position: fixed;
-    top: 18px;
-    right: 18px;
-    z-index: 1000;
+/* ── Nav Controls (dentro del navbar) ─────────────────── */
+.nav-controls {
     display: flex;
-    gap: 12px;
+    align-items: center;
+    gap: 8px;
+    margin-left: 16px;
+    flex-shrink: 0;
 }
 
-.control-btn {
-    width: 46px;
-    height: 46px;
+.nav-controls .control-btn {
+    width: 38px;
+    height: 38px;
     border-radius: 50%;
-    background: var(--card);
-    backdrop-filter: blur(20px);
-    border: 1px solid var(--card-border);
-    box-shadow: var(--shadow);
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--text);
-    transition: transform 0.35s, box-shadow 0.35s, background var(--transition);
+    color: white;
+    transition: transform 0.3s, background 0.3s;
     padding: 0;
 }
 
-.control-btn:hover {
-    transform: scale(1.12) rotate(10deg);
-    box-shadow: 0 8px 28px rgba(8, 145, 178, 0.3);
+.nav-controls .control-btn:hover {
+    background: rgba(255,255,255,0.25);
+    transform: scale(1.1);
 }
 
-.lang-text {
-    font-size: 0.75rem;
+.nav-controls .lang-text {
+    font-size: 0.7rem;
     font-weight: 700;
     font-family: 'Space Grotesk', sans-serif;
+    color: white;
 }
 
 /* ── Floating Nav Dots ──────────────────────────────────────── */
@@ -938,3 +937,327 @@ body.dark-mode #particle-background {
         flex-direction: column;
     }
 }
+
+/* ── Reading Progress Bar ──────────────────────────────── */
+#reading-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    width: 0%;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    z-index: 9999;
+    transition: width 0.1s linear;
+    border-radius: 0 2px 2px 0;
+}
+
+/* ── Top Navbar ────────────────────────────────────────── */
+.top-navbar {
+    position: fixed;
+    top: -80px;
+    left: 0;
+    width: 100%;
+    z-index: 900;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 32px;
+    height: 60px;
+    background: rgba(14, 116, 144, 0.85);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 4px 30px rgba(0,0,0,0.2);
+    transition: top 0.4s cubic-bezier(0.16,1,0.3,1);
+}
+
+.top-navbar.visible {
+    top: 0;
+}
+
+.nav-brand {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: white;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 4px;
+}
+
+.nav-link {
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 6px 12px;
+    border-radius: 8px;
+    transition: background 0.25s, color 0.25s;
+}
+
+.nav-link:hover {
+    background: rgba(255,255,255,0.15);
+    color: white;
+}
+
+@media (max-width: 600px) {
+    .nav-links { display: none; }
+    .top-navbar { padding: 0 16px; }
+}
+
+/* ── Typing Subtitle ──────────────────────────────────── */
+.typing-subtitle {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    font-weight: 500;
+    color: rgba(255,255,255,0.9);
+    min-height: 1.6em;
+    margin-bottom: 14px;
+    letter-spacing: 0.5px;
+}
+
+.typing-subtitle .cursor-blink {
+    display: inline-block;
+    width: 2px;
+    background: rgba(255,255,255,0.9);
+    margin-left: 2px;
+    animation: blinkCursor 0.7s step-end infinite;
+    vertical-align: text-bottom;
+    height: 1.1em;
+}
+
+@keyframes blinkCursor {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* ── Skill Bars ───────────────────────────────────────── */
+.skills-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.skill-bar-item {}
+
+.skill-bar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 7px;
+}
+
+.skill-bar-name {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.skill-bar-level {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.skill-bar-track {
+    height: 8px;
+    background: rgba(8, 145, 178, 0.12);
+    border-radius: 50px;
+    overflow: hidden;
+    border: 1px solid rgba(8,145,178,0.15);
+}
+
+.skill-bar-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    border-radius: 50px;
+    transition: width 1.2s cubic-bezier(0.16,1,0.3,1);
+    box-shadow: 0 0 10px rgba(8,145,178,0.4);
+}
+
+/* ── Education Grid ───────────────────────────────────── */
+.edu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 14px;
+}
+
+.edu-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 16px;
+    background: rgba(8,145,178,0.05);
+    border: 1px solid rgba(8,145,178,0.15);
+    border-radius: 12px;
+    transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
+}
+
+.edu-card:hover {
+    transform: translateY(-3px);
+    background: rgba(8,145,178,0.1);
+    box-shadow: 0 8px 24px rgba(8,145,178,0.12);
+}
+
+.edu-icon {
+    font-size: 1.8rem;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.edu-info {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.edu-info h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.3;
+}
+
+.edu-school {
+    font-size: 0.78rem;
+    color: var(--text-soft);
+    font-weight: 500;
+}
+
+.edu-year {
+    font-size: 0.73rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-top: 2px;
+}
+
+/* ── Project Featured Card ────────────────────────────── */
+.project-card--featured {
+    border: 1.5px solid rgba(8,145,178,0.3);
+    background: rgba(8,145,178,0.06);
+    position: relative;
+    overflow: hidden;
+}
+
+.project-card--featured::after {
+    content: '⭐ Featured';
+    position: absolute;
+    top: 12px;
+    right: -22px;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    color: white;
+    font-size: 0.65rem;
+    font-weight: 800;
+    padding: 3px 32px;
+    transform: rotate(35deg);
+    letter-spacing: 0.5px;
+}
+
+/* ── Project Links Button ─────────────────────────────── */
+.project-links {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.project-link-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    background: rgba(8,145,178,0.1);
+    border: 1px solid rgba(8,145,178,0.3);
+    border-radius: 50px;
+    color: var(--primary);
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 600;
+    transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.project-link-btn:hover {
+    background: var(--primary);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(8,145,178,0.35);
+}
+
+/* ── Badge web ────────────────────────────────────────── */
+.badge-web {
+    background: rgba(139,92,246,0.15);
+    color: #7c3aed;
+    border: 1px solid rgba(139,92,246,0.3);
+}
+
+.dark-mode .badge-web {
+    color: #c4b5fd;
+}
+
+/* ── Copy Icon in contact card ───────────────────────── */
+.copy-icon {
+    margin-left: auto;
+    opacity: 0.5;
+    transition: opacity 0.25s;
+}
+
+.contact-card:hover .copy-icon {
+    opacity: 1;
+}
+
+/* ── Header Controls (visibles cuando navbar está oculto) ── */
+.header-controls {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 18px;
+    flex-wrap: wrap;
+}
+
+.hlink-control {
+    background: rgba(255,255,255,0.12) !important;
+    border: 1px solid rgba(255,255,255,0.25) !important;
+    padding: 7px 16px !important;
+    font-size: 0.82rem;
+    cursor: pointer;
+    gap: 6px;
+}
+
+.lang-text-h {
+    font-size: 0.78rem;
+    font-weight: 700;
+    font-family: 'Space Grotesk', sans-serif;
+    color: white;
+}
+
+/* ── Toast ────────────────────────────────────────────── */
+.toast {
+    position: fixed;
+    bottom: 28px;
+    left: 50%;
+    transform: translateX(-50%) translateY(80px);
+    background: var(--primary);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    z-index: 9999;
+    box-shadow: 0 8px 30px rgba(8,145,178,0.4);
+    transition: transform 0.4s cubic-bezier(0.16,1,0.3,1), opacity 0.4s;
+    opacity: 0;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+.toast.show {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+}

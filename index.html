@@ -4,20 +4,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iram Guerrero | QA Lead/Dev</title>
+    <title>Iram Guerrero | QA Lead/Dev · Automatización & DevOps</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <meta name="description"
-        content="QA Engineer/Lead especializado en automatización, DevOps y liderazgo de equipos de calidad.">
+    <meta name="description" content="QA Lead/Dev con +10 años de experiencia en automatización, DevOps y liderazgo de equipos de calidad. Selenium, Appium, Python, Azure, IA/RAG.">
+    <!-- OG / LinkedIn -->
+    <meta property="og:title" content="Iram Guerrero | QA Lead/Dev">
+    <meta property="og:description" content="QA Lead especializado en automatización (Selenium, Appium), DevOps y sistemas IA para QA. +10 años de experiencia.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://iramgro.github.io/cv/og-preview.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Iram Guerrero | QA Lead/Dev">
+    <meta name="twitter:description" content="QA Lead · Automatización · DevOps · IA/RAG">
     <link rel="stylesheet" href="styles.css">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
 </head>
 
 <body>
 
+    <!-- Reading Progress Bar -->
+    <div id="reading-progress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+
+    <!-- Top Navbar -->
+    <nav id="top-navbar" class="top-navbar" aria-label="Navegación principal">
+        <div class="nav-brand">ICGC</div>
+        <ul class="nav-links">
+            <li><a href="#about" class="nav-link" data-i18n="nav_about">Sobre mí</a></li>
+            <li><a href="#experience" class="nav-link" data-i18n="nav_experience">Experiencia</a></li>
+            <li><a href="#projects" class="nav-link" data-i18n="nav_projects">Proyectos</a></li>
+            <li><a href="#education" class="nav-link" data-i18n="nav_education">Educación</a></li>
+            <li><a href="#skills" class="nav-link" data-i18n="nav_skills">Habilidades</a></li>
+            <li><a href="#contact" class="nav-link" data-i18n="nav_contact">Contacto</a></li>
+        </ul>
+        <div class="nav-controls">
+            <button id="lang-toggle" aria-label="Toggle language" class="control-btn">
+                <span class="lang-text">ES | en</span>
+            </button>
+            <button id="dark-mode-toggle" aria-label="Toggle dark mode" class="control-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="icon-moon">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="icon-sun" style="display:none">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast" role="alert" aria-live="polite"></div>
 
     <div class="svg-bg" aria-hidden="true">
         <svg viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg" class="blob blob-1">
@@ -86,9 +121,10 @@
                 </svg>
             </div>
             <h1>Iram Coré<br><span>Guerrero Cepeda</span></h1>
+            <p class="typing-subtitle" id="typing-subtitle" aria-label="QA Lead · Automatización · DevOps"></p>
             <p class="role-tag">
                 <span class="role-badge" data-i18n="role_qa_lead">QA Lead/Dev</span>
-                <span class="role-badge" data-i18n="role_automation">Automation</span>
+                <span class="role-badge" data-i18n="role_automation">Automatización</span>
                 <span class="role-badge" data-i18n="role_devops">DevOps</span>
             </p>
             <div class="header-links">
@@ -118,6 +154,20 @@
                     </svg>
                     GitHub
                 </a>
+            </div>
+            <!-- Controles visibles en el header (antes de que aparezca el navbar) -->
+            <div class="header-controls" id="header-controls">
+                <button id="lang-toggle-header" aria-label="Toggle language" class="hlink hlink-control" onclick="document.getElementById('lang-toggle').click()">
+                    <span class="lang-text-h">ES | EN</span>
+                </button>
+                <button id="dark-mode-toggle-header" aria-label="Toggle dark mode" class="hlink hlink-control" onclick="document.getElementById('dark-mode-toggle').click()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="icon-moon-h">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="icon-sun-h" style="display:none">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                </button>
             </div>
         </div>
 
@@ -302,6 +352,85 @@
                         tscon</span>
                 </div>
             </div>
+
+
+            <div class="project-card project-card--featured">
+                <div class="project-header">
+                    <div class="project-title-wrap">
+                        <span class="project-emoji">🌐</span>
+                        <div>
+                            <h3 data-i18n="proj4_title">CV Portfolio Web</h3>
+                            <span class="project-company" data-i18n="proj4_company">Proyecto Personal</span>
+                        </div>
+                    </div>
+                    <span class="project-badge badge-web" data-i18n="proj4_badge">Frontend</span>
+                </div>
+                <p class="project-desc" data-i18n="proj4_desc">Portal web interactivo como CV/Portafolio profesional. Incluye dark mode, i18n ES/EN, smooth scroll (Lenis), animaciones CSS avanzadas, glassmorphism y generación automática de CV en DOCX/PDF mediante Python-docx.</p>
+                <div class="project-impact">
+                    <span class="impact-pill">🌙 Dark Mode</span>
+                    <span class="impact-pill">🌍 ES / EN</span>
+                    <span class="impact-pill">⚡ Lenis Scroll</span>
+                    <span class="impact-pill">📄 Auto CV DOCX</span>
+                </div>
+                <div class="project-stack">
+                    <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Python</span><span>python-docx</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/IramGro" target="_blank" rel="noopener noreferrer" class="project-link-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        GitHub
+                    </a>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ── Educación & Certificaciones ── -->
+        <section id="education" class="card reveal">
+            <div class="section-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
+                </svg>
+            </div>
+            <h2 data-i18n="edu_title">Educación &amp; Certificaciones</h2>
+
+            <div class="edu-grid">
+                <div class="edu-card">
+                    <div class="edu-icon">🎓</div>
+                    <div class="edu-info">
+                        <h3 data-i18n="edu_degree">Ingeniería en Sistemas Computacionales</h3>
+                        <span class="edu-school" data-i18n="edu_school">Instituto Tecnológico de Estudios Superiores</span>
+                        <span class="edu-year">2009 – 2014</span>
+                    </div>
+                </div>
+
+                <div class="edu-card">
+                    <div class="edu-icon">☁️</div>
+                    <div class="edu-info">
+                        <h3 data-i18n="edu_cert1">Microsoft Azure DevOps Engineer</h3>
+                        <span class="edu-school">Microsoft Learn</span>
+                        <span class="edu-year">2023</span>
+                    </div>
+                </div>
+
+                <div class="edu-card">
+                    <div class="edu-icon">🤖</div>
+                    <div class="edu-info">
+                        <h3 data-i18n="edu_cert2">Selenium WebDriver con Java</h3>
+                        <span class="edu-school">Udemy</span>
+                        <span class="edu-year">2021</span>
+                    </div>
+                </div>
+
+                <div class="edu-card">
+                    <div class="edu-icon">🐍</div>
+                    <div class="edu-info">
+                        <h3 data-i18n="edu_cert3">Python para QA &amp; Automatización</h3>
+                        <span class="edu-school">Udemy</span>
+                        <span class="edu-year">2022</span>
+                    </div>
+                </div>
+            </div>
         </section>
 
 
@@ -314,17 +443,39 @@
                 </svg>
             </div>
             <h2 data-i18n="skills_title">Habilidades Técnicas</h2>
-            <div class="skills-container">
-                <span class="skill" data-icon="🐍">Python</span>
-                <span class="skill" data-icon="🌐">Selenium</span>
-                <span class="skill" data-icon="📱">Appium</span>
-                <span class="skill" data-icon="🗄️">Oracle</span>
-                <span class="skill" data-icon="🔍">SQL</span>
-                <span class="skill" data-icon="📮">Postman API</span>
-                <span class="skill" data-icon="☁️">Azure</span>
-                <span class="skill" data-icon="⚡">Scrum</span>
-                <span class="skill" data-icon="☕">Java</span>
-                <span class="skill" data-icon="🤖">TestNG</span>
+            <div class="skills-bars">
+                <div class="skill-bar-item">
+                    <div class="skill-bar-header"><span class="skill-bar-name">🐍 Python</span><span class="skill-bar-level" data-i18n="skill_advanced">Avanzado</span></div>
+                    <div class="skill-bar-track"><div class="skill-bar-fill" data-pct="88"></div></div>
+                </div>
+                <div class="skill-bar-item">
+                    <div class="skill-bar-header"><span class="skill-bar-name">🌐 Selenium</span><span class="skill-bar-level" data-i18n="skill_expert">Experto</span></div>
+                    <div class="skill-bar-track"><div class="skill-bar-fill" data-pct="95"></div></div>
+                </div>
+                <div class="skill-bar-item">
+                    <div class="skill-bar-header"><span class="skill-bar-name">📱 Appium</span><span class="skill-bar-level" data-i18n="skill_advanced">Avanzado</span></div>
+                    <div class="skill-bar-track"><div class="skill-bar-fill" data-pct="82"></div></div>
+                </div>
+                <div class="skill-bar-item">
+                    <div class="skill-bar-header"><span class="skill-bar-name">☁️ Azure DevOps</span><span class="skill-bar-level" data-i18n="skill_advanced">Avanzado</span></div>
+                    <div class="skill-bar-track"><div class="skill-bar-fill" data-pct="85"></div></div>
+                </div>
+                <div class="skill-bar-item">
+                    <div class="skill-bar-header"><span class="skill-bar-name">🔍 SQL / Oracle</span><span class="skill-bar-level" data-i18n="skill_intermediate">Intermedio</span></div>
+                    <div class="skill-bar-track"><div class="skill-bar-fill" data-pct="75"></div></div>
+                </div>
+                <div class="skill-bar-item">
+                    <div class="skill-bar-header"><span class="skill-bar-name">☕ Java / TestNG</span><span class="skill-bar-level" data-i18n="skill_advanced">Avanzado</span></div>
+                    <div class="skill-bar-track"><div class="skill-bar-fill" data-pct="80"></div></div>
+                </div>
+                <div class="skill-bar-item">
+                    <div class="skill-bar-header"><span class="skill-bar-name">📮 Postman API</span><span class="skill-bar-level" data-i18n="skill_advanced">Avanzado</span></div>
+                    <div class="skill-bar-track"><div class="skill-bar-fill" data-pct="83"></div></div>
+                </div>
+                <div class="skill-bar-item">
+                    <div class="skill-bar-header"><span class="skill-bar-name">🤖 IA / RAG / LLM</span><span class="skill-bar-level" data-i18n="skill_intermediate">Intermedio</span></div>
+                    <div class="skill-bar-track"><div class="skill-bar-fill" data-pct="70"></div></div>
+                </div>
             </div>
         </section>
 
@@ -339,13 +490,14 @@
             </div>
             <h2 data-i18n="contact_title">Contacto</h2>
             <div class="contact-grid">
-                <a href="mailto:coreguerrero@gmail.com" class="contact-card">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                <a href="mailto:coreguerrero@gmail.com" class="contact-card" id="email-copy-btn" title="Click para copiar">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
                     <span>coreguerrero@gmail.com</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="copy-icon">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                    </svg>
                 </a>
                 <a href="https://linkedin.com/in/coreguerrero" class="contact-card" target="_blank"
                     rel="noopener noreferrer">
@@ -392,34 +544,18 @@
         <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" class="footer-wave">
             <path d="M0,30 Q360,0 720,30 Q1080,60 1440,20 L1440,0 L0,0 Z" fill="var(--header-bg)" />
         </svg>
-        <p><span data-i18n="footer_text">© 2011 Iram Coré Guerrero · QA Lead/Dev · Hecho con </span><span
-                style="color:#f472b6">♥</span></p>
+        <p><span data-i18n="footer_text">© 2025 Iram Coré Guerrero · QA Lead/Dev · Hecho con </span><span style="color:#f472b6">♥</span></p>
     </footer>
 
 
-    <div class="floating-controls">
-        <button id="lang-toggle" aria-label="Toggle language" class="control-btn">
-            <span class="lang-text">ES | en</span>
-        </button>
+    <!-- floating-controls moved into #top-navbar -->
 
-        <button id="dark-mode-toggle" aria-label="Toggle dark mode" class="control-btn">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24"
-                stroke="currentColor" class="icon-moon">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-            </svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24"
-                stroke="currentColor" class="icon-sun" style="display:none">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-            </svg>
-        </button>
-    </div>
 
     <nav class="floating-nav" aria-label="Navegación rápida">
         <a href="#about" class="nav-dot" title="Sobre mí" data-i18n-title="nav_about"></a>
         <a href="#experience" class="nav-dot" title="Experiencia" data-i18n-title="nav_experience"></a>
         <a href="#projects" class="nav-dot" title="Proyectos" data-i18n-title="nav_projects"></a>
+        <a href="#education" class="nav-dot" title="Educación" data-i18n-title="nav_education"></a>
         <a href="#skills" class="nav-dot" title="Habilidades" data-i18n-title="nav_skills"></a>
         <a href="#contact" class="nav-dot" title="Contacto" data-i18n-title="nav_contact"></a>
     </nav>
@@ -430,5 +566,3 @@
 </body>
 
 </html>
-
-
